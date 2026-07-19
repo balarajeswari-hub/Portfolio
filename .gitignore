@@ -40,3 +40,5 @@ build_log.txt
 npm_out.txt
 install_error.txt
 test_node.js
+dev_log.txt
+

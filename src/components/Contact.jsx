@@ -65,18 +65,28 @@ const Contact = () => {
 
             <div className="p-8 glass-card rounded-3xl mt-8">
               <h4 className="text-xl font-bold font-outfit mb-4 dark:text-white flex items-center gap-2">
-                <Download className="text-primary-500" size={20} /> Professional Resume
+                <Download className="text-primary-500" size={20} /> Professional Resume & ATS Formats
               </h4>
               <p className="text-slate-600 dark:text-slate-400 mb-6 text-sm">
-                Download my complete profile to learn more about my background, skills, and projects.
+                Access my complete profile in either a standard PDF format or a clean, printer-ready ATS-compliant format.
               </p>
-              <a 
-                href="/Resume.pdf" 
-                download="Bala_Rajeswari_Resume.pdf"
-                className="w-full flex items-center justify-center gap-3 px-8 py-4 bg-primary-500 hover:bg-primary-600 text-white rounded-2xl font-bold transition-all transform hover:scale-[1.02] shadow-lg shadow-primary-500/25"
-              >
-                Download Resume PDF
-              </a>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <a 
+                  href={`${import.meta.env.BASE_URL}Resume.pdf`} 
+                  download="Bala_Rajeswari_Resume.pdf"
+                  className="flex items-center justify-center gap-3 px-6 py-4 bg-primary-500 hover:bg-primary-600 text-white rounded-2xl font-bold transition-all transform hover:scale-[1.02] shadow-lg shadow-primary-500/25 text-center"
+                >
+                  Download PDF
+                </a>
+                <a 
+                  href={`${import.meta.env.BASE_URL}ATS_Resume.html`} 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-3 px-6 py-4 bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-800 dark:text-white rounded-2xl font-bold transition-all transform hover:scale-[1.02] border border-slate-200 dark:border-slate-700 text-center"
+                >
+                  View ATS Resume
+                </a>
+              </div>
             </div>
           </motion.div>
 

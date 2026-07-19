@@ -1,6 +1,7 @@
 import React from 'react';
 import { Code2, Globe, Database, Cpu, Layout, Settings } from 'lucide-react';
 import { motion } from 'framer-motion';
+import TiltCard from './TiltCard';
 
 const SkillCategory = ({ title, icon: Icon, skills, delay }) => (
   <motion.div
@@ -8,24 +9,26 @@ const SkillCategory = ({ title, icon: Icon, skills, delay }) => (
     whileInView={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.5, delay }}
     viewport={{ once: true }}
-    className="glass-card p-6 rounded-2xl hover:border-primary-500/50 transition-colors group"
+    className="h-full"
   >
-    <div className="flex items-center gap-3 mb-6">
-      <div className="p-3 bg-primary-500/10 rounded-xl group-hover:bg-primary-500 group-hover:text-white transition-all">
-        <Icon size={24} />
+    <TiltCard className="glass-card p-6 rounded-2xl hover:border-primary-500/50 transition-colors group h-full">
+      <div className="flex items-center gap-3 mb-6">
+        <div className="p-3 bg-primary-500/10 rounded-xl group-hover:bg-primary-500 group-hover:text-white transition-all">
+          <Icon size={24} />
+        </div>
+        <h3 className="text-xl font-bold font-outfit dark:text-white">{title}</h3>
       </div>
-      <h3 className="text-xl font-bold font-outfit dark:text-white">{title}</h3>
-    </div>
-    <div className="flex flex-wrap gap-2">
-      {skills.map((skill) => (
-        <span
-          key={skill}
-          className="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-lg text-sm border border-slate-200 dark:border-slate-700 font-medium"
-        >
-          {skill}
-        </span>
-      ))}
-    </div>
+      <div className="flex flex-wrap gap-2">
+        {skills.map((skill) => (
+          <span
+            key={skill}
+            className="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-lg text-sm border border-slate-200 dark:border-slate-700 font-medium"
+          >
+            {skill}
+          </span>
+        ))}
+      </div>
+    </TiltCard>
   </motion.div>
 );
 

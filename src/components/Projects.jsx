@@ -1,6 +1,7 @@
 import React from 'react';
 import { ExternalLink, Github, Monitor, Server, Brain, ShoppingCart, Gavel, UserPlus } from 'lucide-react';
 import { motion } from 'framer-motion';
+import TiltCard from './TiltCard';
 
 const ProjectCard = ({ title, description, tags, icon: Icon, delay }) => (
   <motion.div
@@ -8,37 +9,39 @@ const ProjectCard = ({ title, description, tags, icon: Icon, delay }) => (
     whileInView={{ opacity: 1, scale: 1 }}
     transition={{ duration: 0.5, delay }}
     viewport={{ once: true }}
-    className="glass-card overflow-hidden rounded-3xl p-6 hover:border-primary-500 transition-all group flex flex-col h-full"
+    className="h-full"
   >
-    <div className="flex items-center justify-between mb-4">
-      <div className="p-3 bg-primary-500/10 text-primary-500 rounded-2xl group-hover:scale-110 transition-transform">
-        <Icon size={24} />
+    <TiltCard className="glass-card overflow-hidden rounded-3xl p-6 hover:border-primary-500 transition-all group flex flex-col h-full">
+      <div className="flex items-center justify-between mb-4">
+        <div className="p-3 bg-primary-500/10 text-primary-500 rounded-2xl group-hover:scale-110 transition-transform">
+          <Icon size={24} />
+        </div>
+        <div className="flex gap-3">
+          <a href="#" className="p-2 hover:text-primary-500 transition-colors" title="View Code">
+            <Github size={20} />
+          </a>
+          <a href="#" className="p-2 hover:text-primary-500 transition-colors" title="Live Demo">
+            <ExternalLink size={20} />
+          </a>
+        </div>
       </div>
-      <div className="flex gap-3">
-        <a href="#" className="p-2 hover:text-primary-500 transition-colors" title="View Code">
-          <Github size={20} />
-        </a>
-        <a href="#" className="p-2 hover:text-primary-500 transition-colors" title="Live Demo">
-          <ExternalLink size={20} />
-        </a>
+      
+      <h3 className="text-xl font-bold font-outfit mb-3 dark:text-white group-hover:text-primary-500 transition-colors">
+        {title}
+      </h3>
+      
+      <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6 flex-grow">
+        {description}
+      </p>
+      
+      <div className="flex flex-wrap gap-2 mt-auto">
+        {tags.map((tag) => (
+          <span key={tag} className="px-2.5 py-1 bg-primary-500/5 text-primary-600 dark:text-primary-400 rounded-md text-xs font-semibold">
+            {tag}
+          </span>
+        ))}
       </div>
-    </div>
-    
-    <h3 className="text-xl font-bold font-outfit mb-3 dark:text-white group-hover:text-primary-500 transition-colors">
-      {title}
-    </h3>
-    
-    <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6 flex-grow">
-      {description}
-    </p>
-    
-    <div className="flex flex-wrap gap-2 mt-auto">
-      {tags.map((tag) => (
-        <span key={tag} className="px-2.5 py-1 bg-primary-500/5 text-primary-600 dark:text-primary-400 rounded-md text-xs font-semibold">
-          {tag}
-        </span>
-      ))}
-    </div>
+    </TiltCard>
   </motion.div>
 );
 
