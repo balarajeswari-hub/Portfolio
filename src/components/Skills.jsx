@@ -61,7 +61,7 @@ const Skills = () => {
     {
       title: "Certifications",
       icon: Layout,
-      skills: ["MongoDB Node.js", "Full Stack Intern", "Python Foundation", "AI Literacy (IBM)", "Chatbot (IBM)"],
+      skills: ["MongoDB Node.js (MongoDB Univ.)", "Python Foundation (Infosys)", "Full Stack MERN (SmartBridge)", "Advanced SQL (upGrad)", "AI Literacy (IBM)", "AI Automation (IBM)", "Gen AI & Cloud (IBM)", "Prompt Engineering (AWS)", "AWS Cloud Practitioner", "TCS iON Career Edge", "Forage: ESG, EY, Deloitte, Cybersecurity"],
       delay: 0.5
     },
     {
