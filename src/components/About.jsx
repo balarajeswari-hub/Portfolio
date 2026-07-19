@@ -8,7 +8,7 @@ const About = () => {
       degree: "MCA",
       institution: "Swarnandhra College of Engineering and Technology",
       year: "2024 - 2026",
-      result: "7.98 CGPA (till 3rd Sem)"
+      result: "7.98 CGPA"
     },
     {
       degree: "B.Sc (MPCS)",
